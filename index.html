@@ -5,89 +5,326 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pernikahan Rizaldi & Maudhina</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fefefe;
+    }
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ccc;
+    }
+    button {
+      background: maroon;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #a30000;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: maroon;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      width: 45px;
+      height: 45px;
+      display: none;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 999;
+    }
+    img.mosque-img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
     audio {
       display: none;
     }
-  </style>
-  <script>
-    // Countdown Timer Script
-    document.addEventListener("DOMContentLoaded", function () {
-      const countdown = document.getElementById("countdown");
-      const targetDate = new Date("2025-07-18T08:00:00").getTime();
-
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-
-        if (distance < 0) {
-          countdown.innerHTML = "Acara telah dimulai!";
-          return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdown.innerHTML = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
       }
+      .section {
+        padding: 60px 15px;
+      }
+    }
+	
+	/*venue background*/
+	.venue-bg {
+  background: #fdf9f3; /* optional light theme */
+}
+@media (max-width: 480px) {
+  .venue-bg img {
+    max-height: 160px;
+  }
+}
 
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    });
+.closing-bg {
+  background: linear-gradient(135deg, #fff5f7, #ffe7e9);
+  color: #702020;
+}
+
+.countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.countdown-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  min-width: 80px;
+}
+
+.countdown-item span {
+  font-size: 32px;
+  font-weight: bold;
+  color: maroon;
+  display: block;
+}
+
+.countdown-item label {
+  font-size: 14px;
+  color: #333;
+}
+  </style>
+  
+  
+  <style>
+  .islamic-footer {
+  background: #f9f3f0;
+  color: #702020;
+  font-family: 'Amiri', serif;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dua-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.salam-footer {
+  font-size: 24px;
+  color: maroon;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Confetti Animation */
+.confetti {
+  position: absolute;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  background-color: gold;
+  border-radius: 50%;
+  animation: fall 5s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+✅
+  </style>
+
+  <script>
+    // Countdown Timer
+document.addEventListener("DOMContentLoaded", function () {
+    const targetDate = new Date("2025-07-18T08:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days.toString().padStart(2, '0');
+      document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  });
   </script>
 </head>
 <body>
-  <!-- Background Music (Autoplay + Loop) -->
+
+<!-- Auto-play Background Music -->
 <audio autoplay loop>
   <source src="music.mp3" type="audio/mpeg" />
 </audio>
 
-  <section id="cover" class="section">
-    <h1>RIZALDI & MAUDHINA</h1>
-    <p class="subtitle">invited you to their wedding</p>
-    <div class="date">18.07.25</div>
-    <blockquote>
-      “And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy...” (QS Ar-Rum: 21)
-    </blockquote>
-  </section>
+<!-- Back to Top Button -->
+<button id="backToTop" onclick="scrollToTop()" title="Back to Top">↑</button>
 
-  <section id="invitation" class="section">
-    <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
-    <p class="salam">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
-    <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i ke acara pernikahan kami:</p>
-    <h2>Rizaldi Alfathan Hidayatullah</h2>
-    <p class="parents">Putra Bpk. I Nyoman Sudiana & Ibu Mimin Chatur Putri Y</p>
-    <p class="dengan">dengan</p>
-    <h2>Rizqi Maudhina Putri</h2>
-    <p class="parents">Putri Bpk. Romie Remaja Putra & Ibu Haya Mardiana</p>
-  </section>
+<!-- Hero Section -->
+<section id="hero" class="section">
+  <h1>RIZALDI & MAUDHINA</h1>
+  <p class="subtitle">invited you to their wedding</p>
+  <div class="date">18.07.25</div>
+  <blockquote>
+    “And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy...” (QS Ar-Rum: 21)
+  </blockquote>
+</section>
 
-  <section id="venue" class="section venue-bg">
-    <h3>Akad Nikah</h3>
-        <p><strong>Jumat, 18 Juli 2025</strong></p>
-    <p>Pukul : 08.00 WIB s/d Selesai</p>
-    <p>
-      Tempat : Masjid Al Thohir<br />
-      Jl. Mochamad Thohir, RT.01/RW.12, Tapos<br />
-      Kec. Tapos, Kota Depok, Jawa Barat 16457
-    </p>
+<!-- Invitation Section -->
+<section id="invitation" class="section">
+  <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+  <p class="salam">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+  <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i ke acara pernikahan kami:</p>
+  <h2>Rizaldi Alfathan Hidayatullah</h2>
+  <p class="parents">Putra Bpk. I Nyoman Sudiana & Ibu Mimin Chatur Putri Y</p>
+  <p class="dengan">dengan</p>
+  <h2>Rizqi Maudhina Putri</h2>
+  <p class="parents">Putri Bpk. Romie Remaja Putra & Ibu Haya Mardiana</p>
+</section>
 
-	<img src="mosque.jpg" alt="Masjid Al Thohir" class="mosque-img" />
-
+<!-- Venue Section -->
+<section id="venue" class="section venue-bg" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px;">
+  <h3 style="margin-bottom: 10px;">Akad Nikah</h3>
+  <p><strong>Jumat, 18 Juli 2025</strong></p>
+  <p>Pukul: 08.00 WIB - 10.00 WIB</p>
+  <img src="mosque.jpg" alt="Masjid Al Thohir" style="max-width: 100%; height: auto; border-radius: 10px; margin: 15px 0;" />
+  
+  <div style="font-size: 14px; line-height: 1.4; max-width: 400px;">
+    <p><strong>Tempat:</strong> Masjid Al Thohir</p>
+    <p>Jl. Mochamad Thohir, RT.01/RW.12, Tapos</p>
+    <p>Kec. Tapos, Kota Depok, Jawa Barat 16457</p>
     <p><strong>Dress Code:</strong> Maroon / Cream / White</p>
-    <button onclick="window.open('https://maps.app.goo.gl/4SZxMox2ueKgXBJK8', '_blank')">📍 Lokasi Acara</button>
-  </section>
+  </div>
 
-  <section id="countdown-section" class="section">
-    <h3>Menuju Hari Bahagia</h3>
-    <p id="countdown" class="countdown-text">Loading...</p>
-  </section>
+  <button style="margin-top: 15px;" onclick="window.open('https://maps.app.goo.gl/4SZxMox2ueKgXBJK8', '_blank')">
+    📍 Lokasi Acara
+  </button>
+</section>
 
-  <footer class="section">
-    <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i </br>berkenan memberi doa dan restu kepada kedua mempelai</p>
-	<p>Wasalamu'alaikum Warahmatullahi Wabarakatuh</p>
-  </footer>
+
+<!-- Countdown -->
+<section id="closing" class="section closing-bg">
+  <h3 style="font-size: 28px; margin-bottom: 10px;">Menuju Hari Bahagia</h3>
+  <p style="font-size: 16px; margin-bottom: 30px;">Hitung mundur menuju momen yang penuh berkah:</p>
+
+  <div id="countdown" class="countdown-box">
+    <div class="countdown-item"><span id="days">00</span><label>Hari</label></div>
+    <div class="countdown-item"><span id="hours">00</span><label>Jam</label></div>
+    <div class="countdown-item"><span id="minutes">00</span><label>Menit</label></div>
+    <div class="countdown-item"><span id="seconds">00</span><label>Detik</label></div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="section islamic-footer">
+<section id="ending" >
+    <p class="dua-text">
+    Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i <br />
+    berkenan memberi doa dan restu kepada kedua mempelai
+  </p>  
+   <p class="salam-footer">وَالسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p>
+</section>
+</footer>
+
+<!-- Auto Scroll Script -->
+<script>
+  const sections = ["hero", "invitation", "venue", "closing","ending"];
+  let currentIndex = 0;
+  let userInteracted = false;
+  let scrollTimer;
+
+  function scrollToSection(index, override = false) {
+    if (!override && userInteracted) return;
+    const section = document.getElementById(sections[index]);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  function scrollToTop() {
+    userInteracted = false; // allow auto-scroll again
+    currentIndex = 0;
+    scrollToSection(0, true);
+  }
+
+  function autoScrollSections() {
+    if (userInteracted) return;
+    currentIndex = (currentIndex + 1) % sections.length;
+    scrollToSection(currentIndex);
+  }
+
+  function startAutoScroll() {
+    scrollTimer = setInterval(autoScrollSections, 8000); // smoother pace
+  }
+
+  // Start scroll after 2 seconds delay
+  setTimeout(startAutoScroll, 2000);
+
+  // Detect user interaction
+  window.addEventListener("wheel", () => userInteracted = true);
+  window.addEventListener("touchstart", () => userInteracted = true);
+  window.addEventListener("click", () => userInteracted = true);
+  window.addEventListener("keydown", () => userInteracted = true);
+
+  // Back to top button show/hide logic
+  const backToTopBtn = document.getElementById("backToTop");
+  window.onscroll = () => {
+    backToTopBtn.style.display = (document.documentElement.scrollTop > 300)
+      ? "block" : "none";
+  };
+</script>
+
+<script>
+  // Confetti generator
+  document.addEventListener("DOMContentLoaded", function () {
+    const footer = document.querySelector(".islamic-footer");
+
+    for (let i = 0; i < 30; i++) {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.animationDelay = Math.random() * 5 + "s";
+      confetti.style.backgroundColor = ["gold", "maroon", "white", "#ffb6b6"][i % 4];
+      footer.appendChild(confetti);
+    }
+  });
+</script>
 </body>
 </html>
