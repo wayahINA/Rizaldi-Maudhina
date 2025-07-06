@@ -8,6 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Scheherazade&display=swap" rel="stylesheet" />
 
+
+
+<style>
+.hero-video-wrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.hero-video-bottom {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+</style>
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -298,6 +317,13 @@ document.addEventListener("DOMContentLoaded", function () {
   <blockquote>
     “And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy...” (QS Ar-Rum: 21)
   </blockquote>
+    <div class="hero-video-wrapper">
+  <video controls muted playsinline class="hero-video-bottom">
+    <source src="RizaldiMaudhina.mp4" type="video/mp4" />
+    Browser Anda tidak mendukung video.
+  </video>
+</div>
+
 </section>
 
 <!-- Invitation Section -->
@@ -310,6 +336,8 @@ document.addEventListener("DOMContentLoaded", function () {
   <p class="dengan">dengan</p>
   <h2>Rizqi Maudhina Putri</h2>
   <p class="parents">Putri Bpk. Romie Remaja Putra & Ibu Haya Mardiana</p>
+  
+
 </section>
 
 <!-- Venue Section -->
@@ -425,5 +453,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const video = document.querySelector(".hero-video-bottom");
+
+    if (video) {
+      // When user clicks on the video area
+      video.addEventListener("play", function () {
+        video.muted = false; // Unmute once played
+      });
+
+      // Optional: Ensure mobile compatibility with inline playback
+      video.setAttribute("playsinline", true);
+    }
+  });
+</script>
+
 </body>
 </html>
