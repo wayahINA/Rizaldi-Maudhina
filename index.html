@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pernikahan Rizaldi & Maudhina</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    audio {
+      display: none;
+    }
+  </style>
+  <script>
+    // Countdown Timer Script
+    document.addEventListener("DOMContentLoaded", function () {
+      const countdown = document.getElementById("countdown");
+      const targetDate = new Date("2025-07-18T08:00:00").getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+          countdown.innerHTML = "Acara telah dimulai!";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdown.innerHTML = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+  </script>
+</head>
+<body>
+  <!-- Background Music (Autoplay + Loop) -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg" />
+</audio>
+
+  <section id="cover" class="section">
+    <h1>RIZALDI & MAUDHINA</h1>
+    <p class="subtitle">invited you to their wedding</p>
+    <div class="date">18.07.25</div>
+    <blockquote>
+      “And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy...” (QS Ar-Rum: 21)
+    </blockquote>
+  </section>
+
+  <section id="invitation" class="section">
+    <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+    <p class="salam">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+    <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i ke acara pernikahan kami:</p>
+    <h2>Rizaldi Alfathan Hidayatullah</h2>
+    <p class="parents">Putra Bpk. I Nyoman Sudiana & Ibu Mimin Chatur Putri Y</p>
+    <p class="dengan">dengan</p>
+    <h2>Rizqi Maudhina Putri</h2>
+    <p class="parents">Putri Bpk. Romie Remaja Putra & Ibu Haya Mardiana</p>
+  </section>
+
+  <section id="venue" class="section venue-bg">
+    <h3>Akad Nikah</h3>
+        <p><strong>Jumat, 18 Juli 2025</strong></p>
+    <p>Pukul : 08.00 WIB s/d Selesai</p>
+    <p>
+      Tempat : Masjid Al Thohir<br />
+      Jl. Mochamad Thohir, RT.01/RW.12, Tapos<br />
+      Kec. Tapos, Kota Depok, Jawa Barat 16457
+    </p>
+
+	<img src="mosque.jpg" alt="Masjid Al Thohir" class="mosque-img" />
+
+    <p><strong>Dress Code:</strong> Maroon / Cream / White</p>
+    <button onclick="window.open('https://maps.app.goo.gl/4SZxMox2ueKgXBJK8', '_blank')">📍 Lokasi Acara</button>
+  </section>
+
+  <section id="countdown-section" class="section">
+    <h3>Menuju Hari Bahagia</h3>
+    <p id="countdown" class="countdown-text">Loading...</p>
+  </section>
+
+  <footer class="section">
+    <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i </br>berkenan memberi doa dan restu kepada kedua mempelai</p>
+	<p>Wasalamu'alaikum Warahmatullahi Wabarakatuh</p>
+  </footer>
+</body>
+</html>

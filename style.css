@@ -1,0 +1,101 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fdfbf7;
+  color: #333;
+  line-height: 1.6;
+}
+
+.section {
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.date {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+blockquote {
+  font-style: italic;
+  color: #555;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+
+.bismillah {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.salam {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  font-family: 'Georgia', serif;
+}
+
+.parents, .dengan {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.venue-bg {
+  background: #f4efe6;
+  color: #333;
+}
+
+.mosque-img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  background-color: #8c6b50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#countdown {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #b44c3d;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .date, .subtitle, h2, p {
+    font-size: 1rem;
+  }
+  .section {
+    padding: 1.2rem;
+  }
+}
